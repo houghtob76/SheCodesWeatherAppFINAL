@@ -72,8 +72,8 @@ header {
     transition-duration: 0.2s;
 }
 
-h1 {
-font-size: 48px;
+h1#current-city {
+font-size: 50px;
 color:#50082e;
 font-family: Arial, Helvetica, sans-serif;
 }
