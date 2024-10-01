@@ -10,7 +10,6 @@ header {
 
     display: block;
     background-color: #f0ebff;
-    width: 600px;
     max-width: 600px;
     margin: 60px auto;
     padding: 30px;
@@ -22,18 +21,19 @@ header {
 #search-form {
 
     display: block;
-    margin: auto;
     width: 100%;
+    margin: auto;
+
 }
 
 .search-input {
 
     display: inline-block;
-    background-color: #f9f7fe;
+   
     border: none;
     color: rgba(39, 33, 66, 0.4);
     font-size: 16px;
-    width: 78%;
+    width: 79%;
     padding: 20px;
     border-radius: 6px;
 }
@@ -48,6 +48,7 @@ header {
     font-weight: 700;
     margin-left: 5px;
     font-size: 16px;
+    width: 19%;
     border: none;
     padding: 20px;
     line-height: 1;
@@ -93,6 +94,7 @@ main {
 font-family: Arial, Helvetica, sans-serif;
   } 
   .current-temperature {
+    display: flex;
     padding-top: 20px;
     font-size: 48px;
     color:#50082e;
@@ -107,12 +109,19 @@ font-family: Arial, Helvetica, sans-serif;
     color:#50082e;
 font-family: Arial, Helvetica, sans-serif;
   }
+
+  #current-humidity, #current-wind {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0;
+    color:#50082e;
+font-family: Arial, Helvetica, sans-serif;
+  }
   
-  .current-temperature-icon {
-    position: relative;
-    top: -8px;
-    font-size: 40px;
-    margin-right: 10px;
+  #icon-image {
+    display: flex;
+    width: 88px;
+    height: 88px;
   }
   
   .current-temperature-value {
@@ -125,7 +134,6 @@ font-family: Arial, Helvetica, sans-serif;
   .current-temperature-unit {
     font-size: 28px;
     position: relative;
-    top: -38px;
     color:#50082e;
 font-family: Arial, Helvetica, sans-serif;
   }
