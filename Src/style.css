@@ -144,7 +144,7 @@ font-family: Arial, Helvetica, sans-serif;
 font-family: Arial, Helvetica, sans-serif;
   }
 
-  .current-forecast
+  #forecast
 
   {
     display: flex;

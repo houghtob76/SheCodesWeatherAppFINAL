@@ -66,3 +66,28 @@ let currentDate = new Date();
 
 currentDateElement.innerHTML = formatDate(currentDate);
 
+function displayForecast() {
+    let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+    let forecastHtml = "";
+  
+    days.forEach(function (day) {
+      forecastHtml =
+        forecastHtml +
+        `
+        <div class="current-forecast-date">
+          <div class="current-forecast-date">${day}</div>
+          <div class="current-forecast-icon">🌤️</div>
+          <div class="current-forecast-temperatures">
+            <div class="current-forecast-temperature”>15º</div>
+            <div class="current-forecast-temperature">9º</div>
+          </div>
+        </div>
+      `;
+    });
+  
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = forecastHtml;
+  }
+
+  displayForecast();
+
