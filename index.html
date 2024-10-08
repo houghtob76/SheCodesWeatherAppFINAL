@@ -8,6 +8,7 @@
     <title>Weather App SheCodes Project Final</title>
 </head>
 <body>
+  <div class="main-weather-app">
     <header>
         <form id="search-form">
           <input
@@ -19,8 +20,9 @@
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
+      </header> 
         <main>
-            <div class ="current-weather">
+            <div class="current-weather">
               <div>
                 <h1 id="current-city">Paris</h1>
                 <p class="current-details">
@@ -28,17 +30,60 @@
                   </span>Humidity: <span id="current-humidity"><strong> 87%</strong></span></span><span> Wind: <span id="current-wind"><strong> 7.2km/h</strong></span></span>
                 </p>
               </div>
-            </div>
+          
 
             <div class="current-temperature">
-            <div id="icon-image"><span class="current-temperature-icon">🌤</span></div>
-            <span class="current-temperature-value" id="current-temperature">24</span>
-            <span class="current-temperature-unit">°C</span>
+              <div id="icon-image">
+                <span class="current-temperature-icon">🌤</span>
+              </div>
+              <span class="current-temperature-value" id="current-temperature">24</span>
+              <span class="current-temperature-unit">°C</span>
             </div>
+          </div>
+            
+          <div class="current-forecast">
+              <div class="current-forecast-weather">
+                <div class="current-forecast-date">Tue</div>
+                <div class="current-forecast-icon">🌤</div>
+                <div class="current-forecast-temperatures">
+                <div class="current-forecast-temperature">13°</div>
+                <div class="current-forecast-temperature"> 15°</div></div> 
             </div>
-         </main>
-      </header> 
-</body>
+            <div class="current-forecast-weather">
+              <div class="current-forecast-date">Wed</div>
+              <div class="current-forecast-icon">🌤</div>
+              <div class="current-forecast-temperatures">
+              <div class="current-forecast-temperature">13°</div>
+              <div class="current-forecast-temperature"> 15°</div></div> 
+          </div>
+          <div class="current-forecast-weather">
+            <div class="current-forecast-date">Thurs</div>
+            <div class="current-forecast-icon">🌤</div>
+            <div class="current-forecast-temperatures">
+            <div class="current-forecast-temperature">13°</div>
+            <div class="current-forecast-temperature"> 15°</div></div> 
+        </div>
+        <div class="current-forecast-weather">
+          <div class="current-forecast-date">Fri</div>
+          <div class="current-forecast-icon">🌤</div>
+          <div class="current-forecast-temperatures">
+          <div class="current-forecast-temperature">13°</div>
+          <div class="current-forecast-temperature"> 15°</div></div> 
+      </div>
+      <div class="current-forecast-weather">
+        <div class="current-forecast-date">Sat</div>
+        <div class="current-forecast-icon">🌤</div>
+        <div class="current-forecast-temperatures">
+        <div class="current-forecast-temperature">13°</div>
+        <div class="current-forecast-temperature"> 15°</div></div> 
+    </div>
+          </div>
+      
+      </main>
+      </div>
+
+    
 <script src="src/script.js"></script>
 <footer>Coded by <a href="https://github.com/houghtob76" target="_blank">Beth Houghton</a>, Code is hosted on <a href="https://github.com/houghtob76/SheCodesWeatherAppFINAL" target="_blank">Github</a>, Website is hosted on <a href="https://weather-all-day-all-night.netlify.app/" target="_blank">Netlify</a></footer>
+</body>
 </html>
