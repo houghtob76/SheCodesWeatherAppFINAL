@@ -69,6 +69,13 @@ let currentDate = new Date();
 
 currentDateElement.innerHTML = formatDate(currentDate);
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp + 1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+    return days[date.getDay()];
+}
+
 function getForecast(city) {
     let apiKey = "234aebbda877t7f1bcab0617d23f3o88"
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -76,25 +83,30 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-    console.log(response.data);
-    let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
     let forecastHtml = "";
 
   
-    days.forEach(function (day) {
-      forecastHtml =
+    response.data.daily.forEach(function (day, index) {
+      if (index < 5) {
+        forecastHtml =
         forecastHtml +
         `
-        <div class="current-forecast-date">
-          <div class="current-forecast-date">${day}</div>
-          <div class="current-forecast-icon">🌤️</div>
+        <div class="current-forecast-weather">
+          <div class="current-forecast-date">${formatDay(day.time)}</div>
+          <img src="${day.condition.icon_url}" class="current-forecast-icon" />
           <div class="current-forecast-temperatures">
-            <div class="current-forecast-temperature”>15º</div>
-            <div class="current-forecast-temperature">9º</div>
+            <div class="current-forecast-temperature-max”>
+            <strong>${Math.round(day.temperature.maximum)}º</strong>
+            </div>
+            <div class="current-forecast-temperature-min">
+            ${Math.round(day.temperature.minimum)}
+            º</div>
           </div>
-        </div>
+          </div>
       `;
-    });
+      }
+    })
+    ;
   
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = forecastHtml;
