@@ -70,7 +70,7 @@ let currentDate = new Date();
 currentDateElement.innerHTML = formatDate(currentDate);
 
 function formatDay(timestamp) {
-    let date = new Date(timestamp + 1000);
+    let date = new Date(timestamp * 1000);
     let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
 
     return days[date.getDay()];
@@ -87,22 +87,22 @@ function displayForecast(response) {
 
   
     response.data.daily.forEach(function (day, index) {
-      if (index < 5) {
+      if (index < 2) {
         forecastHtml =
         forecastHtml +
         `
         <div class="current-forecast-weather">
-          <div class="current-forecast-date">${formatDay(day.time)}</div>
-          <img src="${day.condition.icon_url}" class="current-forecast-icon" />
-          <div class="current-forecast-temperatures">
-            <div class="current-forecast-temperature-max”>
-            <strong>${Math.round(day.temperature.maximum)}º</strong>
+            <div class="current-forecast-date">
+                <div class="current-forecast-day">${formatDay(day.time)}</div>
+                <img src="${day.condition.icon_url}" class="current-forecast-icon" />
+                    <div class="current-forecast-temperatures">
+                        <div class="current-forecast-temperature"><strong>${Math.round(day.temperature.day)}º</strong></div>
+                    
+                        <div class="current-forecast-temperature”>${Math.round(day.temperature.minimum)}º</div>
+                    </div>
+                </div>
             </div>
-            <div class="current-forecast-temperature-min">
-            ${Math.round(day.temperature.minimum)}
-            º</div>
-          </div>
-          </div>
+        </div>
       `;
       }
     })
@@ -111,4 +111,3 @@ function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = forecastHtml;
   }
-
