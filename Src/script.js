@@ -100,7 +100,7 @@ function displayForecast(response) {
                     
                         <div class="current-forecast-temperature”>${Math.round(day.temperature.minimum)}º</div>
                     </div>
-                </div>
+    
             </div>
         </div>
       `;
